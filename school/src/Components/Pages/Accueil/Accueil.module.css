@@ -1,0 +1,49 @@
+.welcome {
+  min-height: 50vh;
+  width: 80%;
+  margin: 20vh 10%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.welcome div {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2vh;
+}
+
+.welcome h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #c70110;
+}
+
+.welcome_img {
+  height: 100%;
+  width: 50%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.container {
+  min-height: 50vh;
+  width: 100%;
+  margin: 20vh 0;
+}
+.container h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #c70110;
+  margin: 5vh 10vh;
+}
+
+.container section {
+  margin: 2vh 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

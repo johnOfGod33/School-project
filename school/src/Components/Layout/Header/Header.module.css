@@ -1,0 +1,52 @@
+.header {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo {
+  height: 12vh;
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  margin: 0 50px;
+  padding: 0;
+  height: 12vh;
+  width: 50%;
+}
+
+.menu nav {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.menu ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu li {
+  padding: 10px 20px;
+  list-style-type: none;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.menu li:hover {
+  color: #ffd300;
+}
