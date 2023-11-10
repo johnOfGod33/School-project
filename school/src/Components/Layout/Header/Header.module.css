@@ -1,5 +1,7 @@
 .header {
-  height: 15vh;
+  position: fixed;
+  inset: 0 0 0 0;
+  height: 13vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -7,6 +9,24 @@
   color: #fff;
   font-size: 22px;
   font-weight: bold;
+  background-color: transparent;
+  transition: background-color 300ms;
+}
+
+.header_scroll {
+  position: fixed;
+  inset: 0 0 0 0;
+  height: 13vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #1f1f1f;
+  opacity: 0.7;
+  transition: background-color 300ms;
 }
 
 .logo {
