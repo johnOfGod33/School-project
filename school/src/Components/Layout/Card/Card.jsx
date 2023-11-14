@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Card.module.css";
 import Button from "../Button/Button";
-const Card = ({ image, title }) => {
+const Card = ({ image, title, onClickButton }) => {
   return (
     <div className={style.card}>
       <img src={image} className={style.img} />
@@ -10,7 +10,7 @@ const Card = ({ image, title }) => {
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
         facilis reprehenderit voluptas, explicabo voluptatum.
       </div>
-      <Button title={"Voir plus"} />
+      <Button title={"Voir plus"} onClick={onClickButton} />
     </div>
   );
 };

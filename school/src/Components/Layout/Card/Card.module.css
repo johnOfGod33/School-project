@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 2vh 2vh;
+  box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .card div {
   margin: 0 2vh;
