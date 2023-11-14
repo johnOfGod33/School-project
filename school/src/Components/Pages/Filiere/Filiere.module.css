@@ -1,0 +1,49 @@
+.filiere {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../Assets/Pics/bgc\ home.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filiere h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: #fff;
+}
+
+.search {
+  margin: 20vh 20vh;
+}
+
+.search h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 36px;
+  color: #c70110;
+}
+
+.search div {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  height: 5vh;
+  width: 60%;
+}
+
+.cour {
+  min-height: 50vh;
+  width: 90%;
+  margin: 20vh 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}

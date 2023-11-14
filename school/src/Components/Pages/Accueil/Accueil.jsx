@@ -14,6 +14,16 @@ const Accueil = () => {
   ]);
   return (
     <div>
+      <section className={style.home_image}>
+        <section className={style.home_description}>
+          <h2>Lorem ipsum !</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum id
+            aliquam laudantium quia corrupti eaque at iste quidem.
+          </p>
+          <Button title={"Learn more"} />
+        </section>
+      </section>
       <section className={style.welcome}>
         <div>
           <h2>Welcome to MERN SCHOOL</h2>
@@ -35,8 +45,8 @@ const Accueil = () => {
       <section className={style.container}>
         <h2>NEW</h2>
         <section>
-          {news.map((elment) => (
-            <Card image={elment.image} title={elment.titre} />
+          {news.map((elment, indice) => (
+            <Card key={indice} image={elment.image} title={elment.titre} />
           ))}
         </section>
       </section>
