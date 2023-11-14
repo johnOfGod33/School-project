@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import style from "./Header.module.css";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -24,10 +25,21 @@ const Header = () => {
       <menu className={style.menu}>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Filiere</li>
-            <li>Sign in</li>
-            <li>Sign up</li>
+            <li>
+              <NavLink to={"/"}>Home</NavLink>
+            </li>
+            <li>
+              <NavLink to={"Filiere"}>Filiere</NavLink>
+            </li>
+            <li>
+              <NavLink to={"Filiere"}>actu</NavLink>
+            </li>
+            <li>
+              <NavLink to={"Signin"}>Sign in</NavLink>
+            </li>
+            <li>
+              <NavLink to={"Filiere"}>Sign up</NavLink>
+            </li>
           </ul>
         </nav>
       </menu>

@@ -64,9 +64,13 @@
   padding: 10px 20px;
   list-style-type: none;
   cursor: pointer;
-  transition: 300ms;
 }
 
-.menu li:hover {
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: 300ms;
+}
+.menu a:hover {
   color: #ffd300;
 }
