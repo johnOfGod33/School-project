@@ -26,8 +26,9 @@ const Filiere = () => {
         </div>
       </section>
       <section className={style.cour}>
-        {filiere.map((element) => (
+        {filiere.map((indice, element) => (
           <Card
+            key={indice}
             image={filiere1}
             title={element}
             onClickButton={() => nav("cours")}
