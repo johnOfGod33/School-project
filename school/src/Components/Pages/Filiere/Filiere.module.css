@@ -1,4 +1,6 @@
 .filiere {
+  position: relative;
+  inset: 13vh 0 0 0;
   height: 50vh;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),

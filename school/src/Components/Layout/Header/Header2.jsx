@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Header.module.css";
 import { NavLink } from "react-router-dom";
-const Header = () => {
+const Header2 = () => {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header
       className={
-        scroll ? style.header_scroll : style.header
+        scroll ? style.header_scroll : style.header2
       } /* onScroll={onScrollHandle} */
     >
       <section className={style.logo}>
@@ -47,4 +47,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header2;

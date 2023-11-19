@@ -15,7 +15,8 @@ const SignUp = () => {
           email: "",
           password: "",
         }}
-        onSubmit={(values) => {
+        onSubmit={(values, actions) => {
+          actions.resetForm();
           console.log(values);
         }}
       >
@@ -26,13 +27,23 @@ const SignUp = () => {
                 <input
                   type="text"
                   placeholder="Nom"
+                  value={props.values.nom}
                   onChange={props.handleChange("nom")}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Prenom"
+                  value={props.values.prenom}
+                  onChange={props.handleChange("prenom")}
                 />
               </div>
               <div>
                 <input
                   type="date"
                   placeholder="Date de naissance"
+                  value={props.values.dateDeNaissance}
                   onChange={props.handleChange("dateDeNaissance")}
                 />
               </div>
@@ -40,6 +51,7 @@ const SignUp = () => {
                 <input
                   type="text"
                   placeholder="Pays"
+                  value={props.values.pays}
                   onChange={props.handleChange("pays")}
                 />
               </div>
@@ -54,6 +66,7 @@ const SignUp = () => {
                 <input
                   type="email"
                   placeholder="email"
+                  value={props.values.email}
                   onChange={props.handleChange("email")}
                 />
               </div>
@@ -61,6 +74,7 @@ const SignUp = () => {
                 <input
                   type="password"
                   placeholder="mot de passe"
+                  value={props.values.password}
                   onChange={props.handleChange("password")}
                 />
               </div>

@@ -11,8 +11,9 @@ const SignIn = () => {
           email: "",
           password: "",
         }}
-        onSubmit={(values) => {
+        onSubmit={(values, actions) => {
           console.log(values);
+          actions.resetForm();
         }}
       >
         {(props) => {
@@ -22,6 +23,7 @@ const SignIn = () => {
                 <input
                   type="email"
                   placeholder="email"
+                  value={props.values.email}
                   onChange={props.handleChange("email")}
                 />
               </div>
@@ -29,6 +31,7 @@ const SignIn = () => {
                 <input
                   type="password"
                   placeholder="mot de passe"
+                  value={props.values.password}
                   onChange={props.handleChange("password")}
                 />
               </div>
