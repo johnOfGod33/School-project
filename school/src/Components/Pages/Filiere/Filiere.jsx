@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { basicAxios } from "../../Api/axios";
 import style from "./Filiere.module.css";
 import Button from "../../Layout/Button/Button";
 import Card from "../../Layout/Card/Card";
 import filiere1 from "../../Assets/Pics/filiere1.jpg";
 const Filiere = () => {
+  const [filieres, setFiliere] = useState([]);
   let nav = useNavigate();
-  const filiere = [
-    "FRONT-END",
-    "BACK-END",
-    "FULL STACK",
-    "UX/UI DESIGN",
-    "CYBERSECURITE",
-  ];
+
+  useEffect(() => {
+    basicAxios
+      .get("/filiere/select")
+      .then((res) => {
+        setFiliere(res.data.filieres);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  console.log(filieres);
   return (
     <div>
       <section className={style.filiere}>
@@ -26,14 +32,16 @@ const Filiere = () => {
         </div>
       </section>
       <section className={style.cour}>
-        {filiere.map((indice, element) => (
-          <Card
-            key={indice}
-            image={filiere1}
-            title={element}
-            onClickButton={() => nav("cours")}
-          />
-        ))}
+        {filieres.length &&
+          filieres.map((element) => (
+            <Card
+              key={element.id_filiere}
+              image={filiere1}
+              title={element.nom_filiere}
+              description={element.description_filiere}
+              onClickButton={() => nav(`cour/${element.id_filiere}`)}
+            />
+          ))}
       </section>
     </div>
   );
