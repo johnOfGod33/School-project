@@ -5,7 +5,9 @@ const Card = ({ image, title, onClickButton, description }) => {
   return (
     <div className={style.card}>
       <img src={image} className={style.img} />
-      <div>{title}</div>
+      <div>
+        <h3>{title}</h3>
+      </div>
       <div>
         {description
           ? description

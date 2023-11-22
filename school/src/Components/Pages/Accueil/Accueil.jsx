@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./Accueil.module.css";
 import image1 from "../../Assets/Pics/news image1.jpg";
 import image2 from "../../Assets/Pics/news image2.jpg";
@@ -7,6 +8,7 @@ import welcomeimg from "../../Assets/Pics/welcome.jpg";
 import Card from "../../Layout/Card/Card";
 import Button from "../../Layout/Button/Button";
 const Accueil = () => {
+  let nav = useNavigate();
   const [news, setNew] = useState([
     { titre: "lorem 1", image: image1 },
     { titre: "lorem 2", image: image2 },
@@ -38,7 +40,7 @@ const Accueil = () => {
             voluptatum soluta vel consectetur tenetur. Eius natus porro iure
             illo quis magnam dolor libero veniam minus quam ipsa maxime.
           </p>
-          <Button title={"Voir nos filieres"} />
+          <Button title={"Voir nos filieres"} onClick={() => nav("filiere")} />
         </div>
         <img src={welcomeimg} className={style.welcome_img} alt="welcome" />
       </section>
@@ -46,7 +48,12 @@ const Accueil = () => {
         <h2>NEW</h2>
         <section>
           {news.map((elment, indice) => (
-            <Card key={indice} image={elment.image} title={elment.titre} />
+            <Card
+              key={indice}
+              image={elment.image}
+              title={elment.titre}
+              onClickButton={() => nav("actu")}
+            />
           ))}
         </section>
       </section>
