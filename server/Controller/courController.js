@@ -9,6 +9,6 @@ exports.select = (req, res) => {
   database.query(selectQuery, [req.params.id_filiere], (error, result) => {
     if (error) res.status(503).json(error);
 
-    res.status(201).json({ cours: result });
+    res.status(200).json({ cours: result });
   });
 };

@@ -5,7 +5,7 @@ exports.select = (req, res) => {
   database.query(selectQuery, (error, result) => {
     if (error) res.status(503).json(error);
 
-    res.status(201).json({ actus: result });
+    res.status(200).json({ actus: result });
   });
 };
 
@@ -15,6 +15,6 @@ exports.selectdetails = (req, res) => {
   database.query(selectQuery, [req.params.id_actu], (error, result) => {
     if (error) res.status(503).json(error);
 
-    res.status(201).json({ actus: result });
+    res.status(200).json({ actus: result });
   });
 };

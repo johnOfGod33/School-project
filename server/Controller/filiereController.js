@@ -5,6 +5,6 @@ exports.select = (req, res) => {
   database.query(selectQuery, (error, result) => {
     if (error) res.status(503).json(error);
 
-    res.status(201).json({ filieres: result });
+    res.status(200).json({ filieres: result });
   });
 };
