@@ -1,9 +1,13 @@
 import React from "react";
 import { Formik } from "formik";
 import { NavLink } from "react-router-dom";
+import { basicAxios } from "../../Api/axios";
+import UserContextHook from "../../Hooks/userContextHook";
 import style from "./SignIn.module.css";
 import Button from "../../Layout/Button/Button";
 const SignIn = () => {
+  const { userInfo, setUserInfo } = UserContextHook();
+  console.log(userInfo);
   return (
     <div className={style.signIn}>
       <Formik
@@ -12,8 +16,21 @@ const SignIn = () => {
           password: "",
         }}
         onSubmit={(values, actions) => {
-          console.log(values);
-          actions.resetForm();
+          basicAxios
+            .post("/user/signin", values)
+            .then((res) => {
+              setUserInfo((prevState) => {
+                return {
+                  ...prevState,
+                  token: res.data.token,
+                  admin_user: res.data.admin_user,
+                };
+              });
+              actions.resetForm();
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         }}
       >
         {(props) => {
@@ -35,7 +52,11 @@ const SignIn = () => {
                   onChange={props.handleChange("password")}
                 />
               </div>
-              <Button title={"valider"} onClick={props.handleSubmit} />
+              <Button
+                type={"submit"}
+                title={"valider"}
+                onClick={props.handleSubmit}
+              />
             </div>
           );
         }}
