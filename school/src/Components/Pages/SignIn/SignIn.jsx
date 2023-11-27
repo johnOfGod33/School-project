@@ -1,13 +1,13 @@
 import React from "react";
 import { Formik } from "formik";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { basicAxios } from "../../Api/axios";
 import UserContextHook from "../../Hooks/userContextHook";
 import style from "./SignIn.module.css";
 import Button from "../../Layout/Button/Button";
 const SignIn = () => {
   const { userInfo, setUserInfo } = UserContextHook();
-  console.log(userInfo);
+  let nav = useNavigate();
   return (
     <div className={style.signIn}>
       <Formik
@@ -26,6 +26,8 @@ const SignIn = () => {
                   admin_user: res.data.admin_user,
                 };
               });
+              console.log(userInfo);
+              nav("/filiere");
               actions.resetForm();
             })
             .catch((error) => {

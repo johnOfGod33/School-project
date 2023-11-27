@@ -9,6 +9,7 @@ import Cours from "./Components/Pages/Cours/Cours";
 import SignIn from "./Components/Pages/SignIn/SignIn";
 import SignUp from "./Components/Pages/SignUp/SignUp";
 import ActuDetails from "./Components/Pages/ActuDetails/ActuDetails";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,7 +19,9 @@ const App = () => {
         </Route>
         <Route path="/" Component={OtherLayout}>
           <Route path="filiere" Component={Filiere} />
-          <Route path="filiere/cour/:id_filiere" Component={Cours} />
+          <Route Component={ProtectedRoute}>
+            <Route path="filiere/cour/:id_filiere" Component={Cours} />
+          </Route>
           <Route path="actu" Component={Actualite} />
           <Route path="actu/actuDetail/:id_actu" Component={ActuDetails} />
           <Route path="Signin" Component={SignIn} />
